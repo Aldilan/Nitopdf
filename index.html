@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/output.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body>
+    <!-- <a href="src/views/png.html">f</a> -->
+    <nav class="bg-[#101820] text-white min-w-full fixed z-10">
+        <div class="w-full flex justify-between items-center relative">
+            <button class="w-16 bg-[#3F8812] h-16 group" id="configBtn"><i class='bx bxs-wrench text-3xl group-hover:rotate-45 transition'></i></button>
+            <div class="hidden absolute left-0 bottom-0 translate-y-full" id="config">
+                <div class="flex gap-1 flex-col px-6 py-4 bg-[#3F8812]">
+                    <div class="flex gap-4 justify-between">
+                        <span class="font-kanit">FROM</span>
+                        <div class="after:content-['\25bc'] after:rounded-r-md after:py-1 after:text-xs flex after:h-full after:bg-[#101820] after:text-[#3F8812] after:px-1">
+                            <select class="w-16 appearance-none rounded-l-sm bg-white px-1 text-[#3F8812] cursor-pointer" name="from" id="from">
+                                <option selected disabled>....</option>
+                                <option class="hover:bg-red-500" value="">PDF</option>
+                                <option value="">JPG</option>
+                                <option value="">JPEG</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 justify-between">
+                        <span class="font-kanit">TO</span>
+                        <div class="after:content-['\25bc'] after:rounded-r-md after:py-1 after:text-xs flex after:h-full after:bg-[#101820] after:text-[#3F8812] after:px-1">
+                            <select class="w-16 appearance-none rounded-l-sm bg-white px-1 text-[#3F8812] cursor-pointer" name="from" id="from">
+                                <option class="hover:bg-red-500" value="">PDF</option>
+                                <option value="">JPG</option>
+                                <option value="">JPEG</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href=""><img src="" alt="">lkdfjlkjdf</a>
+            <button class="w-16 h-16" id="menuBtn"><i class='bx bx-menu text-3xl'></i></button>
+            <div class="hidden absolute right-0 bottom-0 translate-y-full" id="menu">
+                <div class=" px-6 py-4 bg-[#101820] flex flex-col gap-10 text-center">          
+                    <span>ABOUT</span>
+                    <div class="flex text-lg gap-2 justify-center">
+                        <i class='bx bxs-sun text-amber-400'></i>
+                        <div class="relative w-8 h-5 p-2 border-2 border-[#3F8812] rounded-full bg-[#3F8812] cursor-pointer" id="modeTgl">
+                            <div class="absolute w-4 h-4 rounded-full bg-white top-1/2 -translate-y-1/2 left-0" id="modeTglCrl"></div>
+                        </div>
+                        <i class='bx bxs-moon text-slate-200' ></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="h-screen w-full relative dark:bg-[#15202B] dark:text-white">
+        <section class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 flex flex-col gap-y-1">
+            <span class="font-kanit text-center text-sm dark:text-gray-200">Convert JPG to PDF in seconds</span>
+            <input type="file" name="file" id="file" class="hidden">
+            <label for="file" class="font-ubuntu cursor-pointer bg-[#3F8812] text-white text-center w-64 text-3xl py-4">SELECT FILE</label>
+        </section>
+        <footer class="absolute gap-1 w-full px-5 py-4 flex items-center justify-between bg-white dark:bg-[#101820] bottom-0 rounded-t-lg shadow-2xl shadow-black">
+            <section>
+                <a href="https://www.facebook.com/aldilan.180705/"><i class='bx bxl-facebook text-xl hover:text-[#3F8812] transition'></i></a>
+                <a href="https://www.instagram.com/dilannhr_/"><i class='bx bxl-instagram text-xl hover:text-[#3F8812] transition'></i></a>
+                <a href="https://github.com/Aldilan/Nitconvert"><i class='bx bxl-github text-xl hover:text-[#3F8812] transition'></i></a>
+                <a href="https://www.linkedin.com/in/aldilan-hermawan-780393205/"><i class='bx bxl-linkedin text-xl hover:text-[#3F8812] transition'></i></a>
+            </section>
+            <span class="font-montserrat dark:text-gray-200">Nitconvert 2022 © </span>
+        </footer>
+    </main>
+    <section class="fixed bottom-20 p-2 right-4 rounded-full z-10 bg-[#3F8812]">
+        <div class="relative after:content-[''] after:absolute after:-top-2 after:left-[21px] after:animate-ping after:w-4 after:h-4 after:rounded-full after:bg-red-500">
+            <button><i class='bx bxs-download text-2xl text-white'></i></button>
+        </div>
+    </section>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

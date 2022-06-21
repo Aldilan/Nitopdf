@@ -40,9 +40,33 @@ menu.addEventListener('mouseout', function (e) {
 const modeTgl = document.getElementById('modeTgl')
 const modeTglCrl = document.getElementById('modeTglCrl')
 const htmlTag = document.querySelector('html')
+const sunIco = document.getElementById('sun')
+const moonIco = document.getElementById('moon')
 
 modeTgl.addEventListener('click', function (e) {
+    modeTgl.classList.toggle("border-amber-400",)
+    modeTgl.classList.toggle("bg-amber-400")
+    modeTgl.classList.toggle("border-slate-200",)
+    modeTgl.classList.toggle("bg-slate-200")
     modeTglCrl.classList.toggle('left-0')
     modeTglCrl.classList.toggle('right-0')
     htmlTag.classList.toggle('dark')
+    sunIco.classList.toggle('text-amber-400')
+    sunIco.classList.toggle('text-white')
+    moonIco.classList.toggle('text-white')
+    moonIco.classList.toggle('text-slate-200')
+})
+
+//downlaod Function
+
+const inputBtn = document.getElementById('inputBtn')
+let getImg
+inputBtn.addEventListener('change',function(e){
+    getImg = URL.createObjectURL(e.target.files[0])
+    const { jsPDF } = window.jspdf;
+    
+    const doc = new jsPDF();
+    doc.addImage(getImg,10,10)
+    doc.save('od.pdf')
+    console.log(doc)
 })

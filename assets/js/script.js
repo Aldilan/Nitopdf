@@ -63,10 +63,10 @@ const inputBtn = document.getElementById('inputBtn')
 let getImg
 inputBtn.addEventListener('change',function(e){
     getImg = URL.createObjectURL(e.target.files[0])
+    console.log(e.target.files[0].type)
     const { jsPDF } = window.jspdf;
     
     const doc = new jsPDF();
     doc.addImage(getImg,10,10)
     doc.save('od.pdf')
-    console.log(doc)
 })

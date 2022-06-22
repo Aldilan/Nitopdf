@@ -60,13 +60,22 @@ modeTgl.addEventListener('click', function (e) {
 //downlaod Function
 
 const inputBtn = document.getElementById('inputBtn')
+const downBtn = document.getElementById('downBtn')
+const downBtnNotif = document.querySelector('#downBtn div')
 let getImg
 inputBtn.addEventListener('change',function(e){
     getImg = URL.createObjectURL(e.target.files[0])
     console.log(e.target.files[0].type)
+
+    downBtnNotif.classList.remove('before:hidden')
+    downBtnNotif.classList.remove('after:hidden')
+})
+
+downBtn.addEventListener('click', function (e) {
     const { jsPDF } = window.jspdf;
-    
     const doc = new jsPDF();
     doc.addImage(getImg,10,10)
     doc.save('od.pdf')
+    downBtnNotif.classList.add('before:hidden')
+    downBtnNotif.classList.add('after:hidden')
 })

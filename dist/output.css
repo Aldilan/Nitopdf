@@ -2456,6 +2456,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 21px;
 }
 
+.before\:hidden::before{
+  content: var(--tw-content);
+  display: none;
+}
+
 .before\:h-3::before{
   content: var(--tw-content);
   height: 0.75rem;
@@ -2517,6 +2522,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .after\:left-\[21px\]::after{
   content: var(--tw-content);
   left: 21px;
+}
+
+.after\:hidden::after{
+  content: var(--tw-content);
+  display: none;
 }
 
 .after\:h-full::after{

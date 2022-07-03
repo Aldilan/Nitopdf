@@ -9,46 +9,28 @@
     <title>Nitopdf</title>
 </head>
 <body>
-    <!-- <a href="src/views/png.html">f</a> -->
-    <nav class="bg-[#101820] text-white min-w-full fixed z-10">
+    <input class="rotate-45 -rotate-45 -translate-x-[0.35rem] before:hidden after:hidden scale-100 opacity-100 translate-x-full border-[#3686A0] text-[#3686A0] before:translate-x-full bg-[#3686A0]" type="hidden">
+    <nav class="text-black min-w-full fixed z-10 px-5 dark:text-white">
         <div class="w-full flex justify-between items-center relative">
-            <button class="w-16 bg-[#3F8812] h-16 group" id="configBtn"><i class='bx bxs-wrench text-3xl group-hover:rotate-45 transition'></i></button>
-            <div class="hidden absolute left-0 bottom-0 translate-y-full" id="config">
-                <div class="flex gap-1 flex-col px-6 py-4 bg-[#3F8812]">
-                    <div class="flex gap-4 justify-between">
-                        <span class="font-kanit">FROM</span>
-                        <div class="after:content-['\25bc'] after:rounded-r-md after:py-1 after:text-xs flex after:h-full after:bg-[#101820] after:text-[#3F8812] after:px-1">
-                            <select class="w-16 appearance-none rounded-l-sm bg-white px-1 text-[#3F8812] cursor-pointer" name="from" id="from">
-                                <option selected disabled>....</option>
-                                <option class="hover:bg-red-500" value="">PDF</option>
-                                <option value="">JPG</option>
-                                <option value="">JPEG</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="flex gap-4 justify-between">
-                        <span class="font-kanit">TO</span>
-                        <div class="after:content-['\25bc'] after:rounded-r-md after:py-1 after:text-xs flex after:h-full after:bg-[#101820] after:text-[#3F8812] after:px-1">
-                            <select class="w-16 appearance-none rounded-l-sm bg-white px-1 text-[#3F8812] cursor-pointer" name="from" id="from">
-                                <option class="hover:bg-red-500" value="">PDF</option>
-                                <option value="">JPG</option>
-                                <option value="">JPEG</option>
-                            </select>
-                        </div>
-                    </div>
+            <div class="relative h-8 w-11 bg-[#3F8812] rounded-lg">
+                <a class="absolute left-[0.5rem] top-1/2 -translate-y-1/2 font-ubuntu text-xl after:content-['convert'] after:ml-3 text-white after:text-black dark:after:text-white" href="">Nit</a>
+            </div>
+            <div class="cursor-pointer h-16 flex items-center justify-center group" id="menuBtn">
+                <div class="relative w-6 h-4 overflow-hidden">
+                    <div class="absolute h-[0.2rem] rounded-lg w-full top-0 bg-black dark:bg-white group-hover:-rotate-45 group-hover:-translate-x-[0.35rem] transition-all duration-300" id="topBurger"></div>
+                    <div class="absolute h-[0.2rem] rounded-lg w-full top-1/2 -translate-y-1/2 bg-black dark:bg-white"></div>
+                    <div class="absolute h-[0.2rem] rounded-lg w-full bottom-0 bg-black dark:bg-white group-hover:rotate-45 group-hover:-translate-x-[0.35rem] transition-all duration-300" id="botBurger"></div>
                 </div>
             </div>
-            <a href=""><img src="" alt="">lkdfjlkjdf</a>
-            <button class="w-16 h-16" id="menuBtn"><i class='bx bx-menu text-3xl'></i></button>
-            <div class="hidden absolute right-0 bottom-0 translate-y-full" id="menu">
-                <div class=" px-6 py-4 bg-[#101820] flex flex-col gap-10 text-center">          
+            <div class="scale-0 transition-all duration-300 bg-white z-10 absolute right-0 bottom-0 translate-y-full peer" id="menu">
+                <div class="shadow-md px-6 py-4 dark:bg-[#101820] flex flex-col gap-10 text-center">          
                     <span>ABOUT</span>
                     <div class="flex text-lg gap-2 justify-center">
                         <i class='bx bxs-sun text-amber-400' id="sun"></i>
-                        <div class="relative w-8 h-5 p-2 border-2 rounded-full border-amber-400 bg-amber-400 cursor-pointer" id="modeTgl">
-                            <div class="absolute w-4 h-4 rounded-full bg-white top-1/2 -translate-y-1/2 left-0" id="modeTglCrl"></div>
+                        <div class="relative w-[2.3rem] h-5 p-2 border-2 rounded-full border-amber-400 bg-amber-400 cursor-pointer" id="modeTgl">
+                            <div class="absolute w-4 h-4 rounded-full bg-white top-1/2 -translate-y-1/2 left-0 translate-x-0 transition-full duration-300" id="modeTglCrl"></div>
                         </div>
-                        <i class='bx bxs-moon white' id="moon"></i>
+                        <i class='bx bxs-moon text-slate-200 ' id="moon"></i>
                     </div>
                 </div>
             </div>
@@ -61,13 +43,21 @@
             <label for="inputBtn" class="font-ubuntu cursor-pointer bg-[#3F8812] text-white text-center rounded w-64 text-3xl py-4 hover:shadow-md hover:text-white/80 hover:shadow-[#3F8812] hover:bg-[#326b0f] transition-all">SELECT FILE</label>
         </form>
         <footer class="absolute gap-1 w-full px-5 py-4 flex items-center justify-between bg-white dark:bg-[#101820] bottom-0 rounded-t-lg shadow-2xl shadow-black">
-            <section>
-                <a href="https://www.facebook.com/aldilan.180705/"><i class='bx bxl-facebook text-xl hover:text-[#3F8812] transition'></i></a>
-                <a href="https://www.instagram.com/dilannhr_/"><i class='bx bxl-instagram text-xl hover:text-[#3F8812] transition'></i></a>
-                <a href="https://github.com/Aldilan/Nitconvert"><i class='bx bxl-github text-xl hover:text-[#3F8812] transition'></i></a>
-                <a href="https://www.linkedin.com/in/aldilan-hermawan-780393205/"><i class='bx bxl-linkedin text-xl hover:text-[#3F8812] transition'></i></a>
+            <section class="flex items-center w-1/2 gap-1">
+                <div class="flex items-center justify-start overflow-hidden h-10 w-5 hover:w-[6.25rem] transition-all duration-500">
+                    <a class="flex gap-1" href="https://www.linkedin.com/in/aldilan-hermawan-780393205/"><i class='bx bxl-facebook text-xl hover:text-[#3F8812] transition-all'></i><span class="relative after:absolute after:content-[''] after:left-0 after:h-[1px] after:translate-x-full overflow-hidden after:transition-all after:duration-500 hover:after:translate-x-0 after:w-full after:bottom-0 after:bg-[#3F8812] hover:text-[#3F8812] transition-al">Facebook</span></a>
+                </div>
+                <div class="flex items-center justify-start overflow-hidden h-10 w-5 hover:w-[6.6rem] transition-all duration-500">
+                    <a class="flex gap-1" href="https://www.instagram.com/dilannhr_/"><i class='bx bxl-instagram text-xl hover:text-[#3F8812] transition-all'></i><span class="relative after:absolute after:content-[''] after:left-0 after:h-[1px] after:translate-x-full overflow-hidden after:transition-all after:duration-500 hover:after:translate-x-0 after:w-full after:bottom-0 after:bg-[#3F8812] hover:text-[#3F8812] transition-al">Instagram</span></a>
+                </div>
+                <div class="flex items-center justify-start overflow-hidden h-10 w-5 hover:w-[5rem] transition-all duration-500">
+                    <a class="flex gap-1" href="https://github.com/Aldilan/Nitmate"><i class='bx bxl-github text-xl hover:text-[#3F8812] transition-all'></i><span class="relative after:absolute after:content-[''] after:left-0 after:h-[1px] after:translate-x-full overflow-hidden after:transition-all after:duration-500 hover:after:translate-x-0 after:w-full after:bottom-0 after:bg-[#3F8812] hover:text-[#3F8812] transition-al">Github</span></a>
+                </div>
+                <div class="flex items-center justify-start overflow-hidden h-10 w-5 hover:w-[5.75rem] transition-all duration-500">
+                    <a class="flex gap-1" href="https://www.linkedin.com/in/aldilan-hermawan-780393205/"><i class='bx bxl-linkedin text-xl hover:text-[#3F8812] transition-all'></i><span class="relative after:absolute after:content-[''] after:left-0 after:h-[1px] after:translate-x-full overflow-hidden after:transition-all after:duration-500 hover:after:translate-x-0 after:w-full after:bottom-0 after:bg-[#3F8812] hover:text-[#3F8812] transition-all">Linkedin</span></a>
+                </div>
             </section>
-            <span class="font-montserrat dark:text-gray-200">Nitconvert 2022 © </span>
+            <span class="font-montserrat text-end dark:text-gray-200">Nitconvert 2022 ©</span>
         </footer>
     </main>
     <section class="fixed bottom-20 p-2 right-4 rounded-full z-10 bg-[#3F8812]" id="downBtn">

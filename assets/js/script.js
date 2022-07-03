@@ -1,38 +1,33 @@
-//Config and Menu pages
 
-const configBtn = document.getElementById('configBtn')
-const configBtnIco = configBtn.getElementsByTagName('i')[0]
-const config = document.getElementById('config')
-configBtn.addEventListener('mouseover', function (e) {
-    config.classList.remove('hidden')
-})
-configBtn.addEventListener('mouseout', function (e) {
-    config.classList.add('hidden')
-})
-
-config.addEventListener('mouseover', function (e) {
-    config.classList.remove('hidden')
-    configBtnIco.classList.add('rotate-45')
-})
-config.addEventListener('mouseout', function (e) {
-    config.classList.add('hidden')
-    configBtnIco.classList.remove('rotate-45')
-})
-
+//Menu pages
 const menuBtn = document.getElementById('menuBtn')
 const menu = document.getElementById('menu')
+const topBurger = document.getElementById('topBurger')
+const botBurger = document.getElementById('botBurger')
 menuBtn.addEventListener('mouseover', function (e) {
-    menu.classList.remove('hidden')
+    menu.classList.remove('scale-0')
+    menu.classList.add('scale-100')
 })
 menuBtn.addEventListener('mouseout', function (e) {
-    menu.classList.add('hidden')
+    menu.classList.add('scale-0')
+    menu.classList.remove('scale-100')
 })
 
 menu.addEventListener('mouseover', function (e) {
-    menu.classList.remove('hidden')
+    menu.classList.remove('scale-0')
+    menu.classList.add('scale-100')
+    topBurger.classList.add('-rotate-45')
+    topBurger.classList.add('-translate-x-[0.35rem]')
+    botBurger.classList.add('rotate-45')
+    botBurger.classList.add('-translate-x-[0.35rem]')
 })
 menu.addEventListener('mouseout', function (e) {
-    menu.classList.add('hidden')
+    topBurger.classList.remove('-rotate-45')
+    topBurger.classList.remove('-translate-x-[0.35rem]')
+    botBurger.classList.remove('rotate-45')
+    botBurger.classList.remove('-translate-x-[0.35rem]')
+    menu.classList.add('scale-0')
+    menu.classList.remove('scale-100')
 })
 
 
@@ -46,15 +41,15 @@ const moonIco = document.getElementById('moon')
 modeTgl.addEventListener('click', function (e) {
     modeTgl.classList.toggle("border-amber-400",)
     modeTgl.classList.toggle("bg-amber-400")
-    modeTgl.classList.toggle("border-slate-200",)
-    modeTgl.classList.toggle("bg-slate-200")
-    modeTglCrl.classList.toggle('left-0')
-    modeTglCrl.classList.toggle('right-0')
+    modeTgl.classList.toggle("border-[#3686A0]",)
+    modeTgl.classList.toggle("bg-[#3686A0]")
+    modeTglCrl.classList.toggle('translate-x-0')
+    modeTglCrl.classList.toggle('translate-x-full')
     htmlTag.classList.toggle('dark')
     sunIco.classList.toggle('text-amber-400')
-    sunIco.classList.toggle('text-white')
-    moonIco.classList.toggle('text-white')
+    sunIco.classList.toggle('text-slate-200')
     moonIco.classList.toggle('text-slate-200')
+    moonIco.classList.toggle('text-[#3686A0]')
 })
 
 //downlaod Function
@@ -62,10 +57,10 @@ modeTgl.addEventListener('click', function (e) {
 const inputBtn = document.getElementById('inputBtn')
 const downBtn = document.getElementById('downBtn')
 const downBtnNotif = document.querySelector('#downBtn div')
-let getImg
+let getImg, getName
 inputBtn.addEventListener('change',function(e){
     getImg = URL.createObjectURL(e.target.files[0])
-    console.log(e.target.files[0].type)
+    getName = e.target.files[0].name
 
     downBtnNotif.classList.remove('before:hidden')
     downBtnNotif.classList.remove('after:hidden')
@@ -75,7 +70,7 @@ downBtn.addEventListener('click', function (e) {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     doc.addImage(getImg,10,10)
-    doc.save('od.pdf')
+    doc.save(getName+'.pdf')
     downBtnNotif.classList.add('before:hidden')
     downBtnNotif.classList.add('after:hidden')
 })
